@@ -1,5 +1,6 @@
+package com.example.produtos.Model;
 /*Pessoa -> classe */
-public class produtos {
+public class Produto {
 
 /* atributos */
 int indentificador;
@@ -12,7 +13,7 @@ String fornecedor;
 
 
 /*Construtor */
-    public produtos(int indentificador, String nome, String descricao, String qualidade, double preco, String categoria, String fornecedor){
+    public Produto(int indentificador, String nome, String descricao, String qualidade, double preco, String categoria, String fornecedor){
         
 
     /*inicializadores */
@@ -36,19 +37,19 @@ String fornecedor;
     public String getNome(){
         return nome;   
     }
-    public int getDescricao(){
+    public String getDescricao(){
         return descricao;   
     }
-    public getQualidade(){
+    public String getQualidade(){
         return qualidade; 
     }
-    public getPreco(){
+    public double getPreco(){
         return preco;
     }
-    public getCategoria(){
+    public String getCategoria(){
         return categoria;
     }
-    public getFornecedor(){
+    public String getFornecedor(){
         return fornecedor;
     }
 
@@ -68,7 +69,7 @@ String fornecedor;
     public void setPreco(double preco){
         this.preco = preco;
     }
-    public void setCategoria(double categoria){
+    public void setCategoria(String categoria){
         this.categoria = categoria;
         }
         public void setFornecedor(String fornecedor){
