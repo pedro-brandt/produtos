@@ -3,17 +3,17 @@ package com.example.produtos.Model;
 public class Produto {
 
 /* atributos */
-int indentificador;
-String nome;
-String descricao;
-String qualidade;
-double preco;
-String categoria;
-String fornecedor;
+private int indentificador;
+private String nome;
+private String descricao;
+private String qualidade;
+private double preco;
+private Categoria categoria;
+private String fornecedor;
 
 
 /*Construtor */
-    public Produto(int indentificador, String nome, String descricao, String qualidade, double preco, String categoria, String fornecedor){
+    public Produto(int indentificador, String nome, String descricao, String qualidade, double preco, Categoria categoria, String fornecedor){
         
 
     /*inicializadores */
@@ -46,7 +46,7 @@ String fornecedor;
     public double getPreco(){
         return preco;
     }
-    public String getCategoria(){
+    public Categoria getCategoria(){
         return categoria;
     }
     public String getFornecedor(){
@@ -69,7 +69,7 @@ String fornecedor;
     public void setPreco(double preco){
         this.preco = preco;
     }
-    public void setCategoria(String categoria){
+    public void setCategoria(Categoria categoria){
         this.categoria = categoria;
         }
         public void setFornecedor(String fornecedor){
