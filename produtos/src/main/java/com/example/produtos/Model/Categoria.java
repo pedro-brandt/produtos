@@ -2,11 +2,26 @@ package com.example.produtos.Model;
 
 import java.util.List;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Data;
+
 /*Pessoa -> classe */
+@Data /* Data gera geters, seters e construtores automaticamente, para não escrevelos */
+@Entity /*vai ser mapeado de acordo */
 public class Categoria {
 
-private String nome;
-private int identificador;
-private List<Produto> produtos;
+    @Id /*anotação principal para identificar a chame primaria da entidade */
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int identificador;
+
+    @Column(nullable = false)
+    private String nome;
+
+    private List<Produto> produtos;
+
 
 }    

@@ -1,15 +1,36 @@
 package com.example.produtos.Model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 /*Pessoa -> classe */
 public class Produto {
 
 /* atributos */
+
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
 private int indentificador;
+
+@Column(nullable = false)
 private String nome;
+
+@Column(nullable = false)
 private String descricao;
+
+@Column(nullable = false)
 private String qualidade;
+
+@Column(nullable = false)
 private double preco;
+
+@Column(nullable = false)
 private Categoria categoria;
-private String fornecedor;
+
+
+private Fornecedor fornecedor;
 
 
 /*Construtor */
