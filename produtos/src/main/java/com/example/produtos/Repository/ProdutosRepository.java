@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.produtos.Model.Produto;
 import com.example.produtos.Model.Usuario;
 
-public interface ProdutoRepository extends JpaRepository<Produto, Integer>{
+public interface ProdutosRepository extends JpaRepository<Produto, Integer>{
     
 }

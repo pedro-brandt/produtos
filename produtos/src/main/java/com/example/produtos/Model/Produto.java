@@ -34,7 +34,7 @@ private Fornecedor fornecedor;
 
 
 /*Construtor */
-    public Produto(int indentificador, String nome, String descricao, String qualidade, double preco, Categoria categoria, String fornecedor){
+    public Produto(int indentificador, String nome, String descricao, String qualidade, double preco, Categoria categoria, Fornecedor fornecedor){
         
 
     /*inicializadores */
@@ -70,7 +70,7 @@ private Fornecedor fornecedor;
     public Categoria getCategoria(){
         return categoria;
     }
-    public String getFornecedor(){
+    public Fornecedor getFornecedor(){
         return fornecedor;
     }
 
@@ -93,7 +93,7 @@ private Fornecedor fornecedor;
     public void setCategoria(Categoria categoria){
         this.categoria = categoria;
         }
-        public void setFornecedor(String fornecedor){
+        public void setFornecedor(Fornecedor fornecedor){
         this.fornecedor = fornecedor;
 
     }

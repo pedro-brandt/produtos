@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.example.produtos.Model.Categoria;
 import com.example.produtos.Repository.CategoriaRepository;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class CategoriaService {
     private final CategoriaRepository categoriaRepository;
@@ -41,6 +43,16 @@ public class CategoriaService {
             });
     }
     */
+public Categoria atualizCategoria(Integer id, Categoria categoria) {
+    return categoriaRepository.findById(id)
+        .map(categoriaNaoAtualizada -> {
+            categoriaNaoAtualizada.setNome((categoria.getNome() == null) ? categoriaNaoAtualizada.getNome() : categoria.getNome());
+            categoriaNaoAtualizada.setProdutos((categoria.getProdutos() == null) ? categoriaNaoAtualizada.getProdutos() : categoria.getProdutos());
+            return categoriaRepository.save(categoriaNaoAtualizada);
+        })
+        .orElseThrow(() -> new EntityNotFoundException("Categoria não encontrada com o id: " + id));
+    }
+ 
 
     public boolean deleteCategoria(Integer id){
         try {
