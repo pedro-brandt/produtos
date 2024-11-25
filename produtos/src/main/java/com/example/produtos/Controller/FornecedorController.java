@@ -17,7 +17,7 @@ import com.example.produtos.Service.ProdutosService;
 
 @RestController
 @RequestMapping("fornecedor")
-public class FormecedorController {
+public class FornecedorController {
    private final FornecedorService fornecedorService;
    
    @Autowired
