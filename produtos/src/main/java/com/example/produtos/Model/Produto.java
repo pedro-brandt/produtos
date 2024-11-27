@@ -32,13 +32,12 @@ private String qualidade;
 @Column(nullable = false)
 private double preco;
 
-@Column(nullable = false)
 @ManyToOne
 @JoinColumn(name = "idCategoria",referencedColumnName = "id")
 private Categoria categoria;
 
 @ManyToOne
-@JoinColumn(name = "idCategoria",referencedColumnName = "id")
+@JoinColumn(name = "idFornecedor",referencedColumnName = "id")
 private Fornecedor fornecedor;
 
 

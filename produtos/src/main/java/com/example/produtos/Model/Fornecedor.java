@@ -17,7 +17,7 @@ public class Fornecedor {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int identificador;
+    private int id;
 
     @Column(nullable = false)
     private String nome;
@@ -28,6 +28,6 @@ public class Fornecedor {
     @Column(nullable = false)
     private String CPF;
 
-    @OneToMany(mappedBy = "categoria", cascade = CascadeType.DETACH)
+    @OneToMany(mappedBy = "fornecedor", cascade = CascadeType.DETACH)
     private List<Produto> produtos;
 }

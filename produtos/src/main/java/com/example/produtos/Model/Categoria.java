@@ -18,7 +18,7 @@ public class Categoria {
 
     @Id /*anotação principal para identificar a chame primaria da entidade */
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int identificador;
+    private int id;
 
     @Column(nullable = false)
     private String nome;
