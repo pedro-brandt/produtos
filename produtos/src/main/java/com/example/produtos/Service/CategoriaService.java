@@ -32,17 +32,6 @@ public class CategoriaService {
         return categoriaRepository.findById(id);
     }
 
-    /* Não fazer os updates os updates de todos por enquanto
-        Fazer os delete, criar, retornar todos, retorna por id
-    public Categoria atualizCategoria(Integer id, Categoria categoria){
-        return categoriaRepository.findById(id)
-            .map(categoriaNaoAtualizada -> {
-                categoriaNaoAtualizada.setNome((categoria.getNome() == null) ? categoriaNaoAtualizada.getNome() : categoria.getNome());
-                categoriaNaoAtualizada.setProdutos((categoria.getProdutos() == null) ? categoriaNaoAtualizada.getProdutos() : categoria.getProdutos());
-                return categoriaRepository.save(categoriaNaoAtualizada);
-            });
-    }
-    */
 public Categoria atualizCategoria(Integer id, Categoria categoria) {
     return categoriaRepository.findById(id)
         .map(categoriaNaoAtualizada -> {

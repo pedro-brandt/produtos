@@ -1,10 +1,16 @@
 package com.example.produtos.Model;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import lombok.Data;
 
+@Data
+@Entity
 /*Pessoa -> classe */
 public class Produto {
 
@@ -27,9 +33,12 @@ private String qualidade;
 private double preco;
 
 @Column(nullable = false)
+@ManyToOne
+@JoinColumn(name = "idCategoria",referencedColumnName = "id")
 private Categoria categoria;
 
-
+@ManyToOne
+@JoinColumn(name = "idCategoria",referencedColumnName = "id")
 private Fornecedor fornecedor;
 
 

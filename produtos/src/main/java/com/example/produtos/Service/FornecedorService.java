@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.produtos.Model.Categoria;
 import com.example.produtos.Model.Fornecedor;
 import com.example.produtos.Repository.FornecedorRepository;
 
