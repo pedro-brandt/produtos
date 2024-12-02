@@ -30,4 +30,14 @@ public class Fornecedor {
 
     @OneToMany(mappedBy = "fornecedor", cascade = CascadeType.DETACH)
     private List<Produto> produtos;
+
+    public Fornecedor(int i, String nome) {
+    }
+
+    public Fornecedor(int i, String nome, String CPF) {
+    }
+
+    public Fornecedor() {
+
+    }
 }

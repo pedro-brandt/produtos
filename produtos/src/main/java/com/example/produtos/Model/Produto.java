@@ -59,6 +59,10 @@ private Fornecedor fornecedor;
 
     }
 
+    public Produto() {
+
+    }
+
 
     public int getIndentificador(){
         return indentificador;   

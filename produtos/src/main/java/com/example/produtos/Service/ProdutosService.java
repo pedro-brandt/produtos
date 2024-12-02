@@ -3,6 +3,7 @@ package com.example.produtos.Service;
 import java.util.List;
 import java.util.Optional;
 
+import com.example.produtos.Model.Fornecedor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,9 +22,25 @@ public class ProdutosService {
         this.produtosRepository = produtosRepository;
     }
 
-    public Produto criarProdutos(Produto produtos){
-        return produtosRepository.save(produtos);
+    public Produto criarProdutos(Produto produtos) {
+        System.out.println("Produto: " + produtos); // Verificação de debug
+        if (produtos.getPreco() < 0) {
+            throw new IllegalArgumentException("O preço não pode ser negativo.");
+        }
+
+        Fornecedor fornecedor = produtos.getFornecedor();
+
+        if (fornecedor != null) {
+            if (!isValidCPF(fornecedor.getCPF())) {
+                throw new IllegalArgumentException("CPF do fornecedor é inválido.");
+            }
+        }
+
+        Produto salvo = produtosRepository.save(produtos);
+        System.out.println("Produto salvo: " + salvo); // Verificação de debug
+        return salvo;
     }
+
 
     public List<Produto> retornarProdutos(){
         return produtosRepository.findAll();
@@ -54,6 +71,11 @@ public Produto atualizProdutos(Integer id, Produto produto){
         }catch(Exception e) {
             return false;
         }
+    }
+
+    private boolean isValidCPF(String cpf) {
+        // Simples validação de exemplo, você pode implementar a lógica real ou usar bibliotecas específicas.
+        return cpf != null && cpf.matches("\\d{11}") && !cpf.equals("00000000000");
     }
 
 }

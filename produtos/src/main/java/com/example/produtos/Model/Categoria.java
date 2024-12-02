@@ -27,4 +27,10 @@ public class Categoria {
     private List<Produto> produtos;
 
 
-}    
+    public Categoria(int id, String nome) {
+    }
+
+    public Categoria() {
+
+    }
+}
